@@ -13,30 +13,48 @@
       min-height: 100vh; margin: 0; text-align: center;
     }
     .card {
-      max-width: 420px; padding: 32px;
+      max-width: 460px; padding: 32px;
       background: #141414; border: 1px solid #262626; border-radius: 12px;
     }
-    h1 { font-size: 22px; margin: 0 0 8px; color: #4ade80; }
+    h1 { font-size: 24px; margin: 0 0 12px; color: #4ade80; }
     p { margin: 8px 0; opacity: 0.75; font-size: 14px; line-height: 1.5; }
-    .small { opacity: 0.4; font-size: 12px; margin-top: 16px; }
+    .countdown {
+      font-size: 48px; font-weight: 600; color: #4ade80;
+      margin: 20px 0 8px; font-variant-numeric: tabular-nums;
+    }
+    .hint { opacity: 0.5; font-size: 13px; margin-top: 20px; }
+    kbd {
+      background: #262626; padding: 2px 6px; border-radius: 4px;
+      font-family: ui-monospace, monospace; font-size: 12px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Signed in ✓</h1>
-    <p>Returning you to Studio Amigo…</p>
-    <p class="small">This tab will close automatically. If it doesn't, you can close it now.</p>
+    <p>Studio Amigo is opening in the background.</p>
+    <div class="countdown" id="countdown">5</div>
+    <p>Closing this tab…</p>
+    <p class="hint">
+      If it doesn't close automatically, press <kbd>Ctrl</kbd>+<kbd>W</kbd> to close it.
+    </p>
   </div>
   <script>
     (function () {
       var payload = location.hash || location.search
       if (payload) {
-        var target = 'studio-amigo://auth-callback' + payload
-        location.replace(target)
+        location.replace('studio-amigo://auth-callback' + payload)
       }
-      setTimeout(function () {
-        try { window.close() } catch (e) { /* browser may block close */ }
-      }, 800)
+      var el = document.getElementById('countdown')
+      var n = 5
+      var tick = setInterval(function () {
+        n -= 1
+        if (el) el.textContent = String(Math.max(n, 0))
+        if (n <= 0) {
+          clearInterval(tick)
+          try { window.close() } catch (e) { /* browser blocked */ }
+        }
+      }, 1000)
     })()
   </script>
 </body>
