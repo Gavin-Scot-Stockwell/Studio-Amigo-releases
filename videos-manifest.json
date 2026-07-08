@@ -1,4 +1,4 @@
 {
-  "payload": "{\"version\":\"1.0.3\",\"issued_at\":\"2026-07-08T22:44:18.240Z\",\"expires_at\":\"2027-07-04T00:00:00Z\",\"videos\":[{\"title\":\"pump up the jam\",\"sha256\":\"98df9af828b9eaafb80c11d36e373d6ed558d4bc8b8c1894caa617d702738487\",\"duration_s\":0,\"categories\":[\"hard\"],\"labels\":{\"workout_type\":\"jam\"}}]}",
-  "signature": "fda19c6816a04f5325838d2eba966d0f2c4e18b93efda3aa46821594705dc4892926a7beca727d72aa2b97308760e29958edfbda83bb086c18e7e3ffd474b40a"
+  "payload": "{\"version\":\"1.0.4\",\"issued_at\":\"2026-07-08T22:44:47.602Z\",\"expires_at\":\"2027-07-04T00:00:00Z\",\"videos\":[]}",
+  "signature": "fcec6ab08f88c95a69fc9565b8ad747448bbd343f8596f2e6ae705c88f84ef63b9d5409d9ad82726af95d07822c4b0735b4a23aad5858ecb4c20fb50fb13490c"
 }
