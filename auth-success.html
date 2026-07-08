@@ -17,6 +17,7 @@
       background: #141414; border: 1px solid #262626; border-radius: 12px;
     }
     h1 { font-size: 24px; margin: 0 0 12px; color: #4ade80; }
+    p { margin: 8px 0; opacity: 0.75; font-size: 14px; line-height: 1.5; }
     .hint { opacity: 0.5; font-size: 13px; margin-top: 20px; }
     kbd {
       background: #262626; padding: 2px 6px; border-radius: 4px;
@@ -28,9 +29,16 @@
   <div class="card">
     <h1>Signed in ✓</h1>
     <p>Studio Amigo is opening in the background.</p>
-    <p> You can close this tab now</p>
-    <p class="hint">
-    </p>
+    <p>You can close this tab now.</p>
+    <p class="hint"></p>
   </div>
+  <script>
+    (function () {
+      var payload = location.hash || location.search
+      if (payload) {
+        location.replace('studio-amigo://auth-callback' + payload)
+      }
+    })()
+  </script>
 </body>
 </html>
