@@ -1,4 +1,4 @@
 {
-  "payload": "{\"version\":\"1.0.4\",\"issued_at\":\"2026-07-08T22:44:47.602Z\",\"expires_at\":\"2027-07-04T00:00:00Z\",\"videos\":[]}",
-  "signature": "fcec6ab08f88c95a69fc9565b8ad747448bbd343f8596f2e6ae705c88f84ef63b9d5409d9ad82726af95d07822c4b0735b4a23aad5858ecb4c20fb50fb13490c"
+  "payload": "{\"version\":\"1.0.5\",\"issued_at\":\"2026-07-08T22:49:52.301Z\",\"expires_at\":\"2027-07-04T00:00:00Z\",\"videos\":[{\"title\":\"mortal\",\"sha256\":\"18f784e371263e4cb54f5b1fafa5bf8239161a2e668d6b90aacf134b5272a9bf\",\"duration_s\":3534,\"difficulty\":\"hard\",\"categories\":[\"mortal\"],\"labels\":{\"workout_type\":\"mortal\"}}]}",
+  "signature": "f4f290a3eba9fc863ddefc86fac6ae514e119047ebb29c53aee6e4d6f7a2e78386749528bb7a2a43cf09a827afe1bb5c11097808fe6132e5df92113e2098d80f"
 }
