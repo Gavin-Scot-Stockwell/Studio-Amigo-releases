@@ -18,25 +18,30 @@
     }
     h1 { font-size: 24px; margin: 0 0 12px; color: #4ade80; }
     p { margin: 8px 0; opacity: 0.75; font-size: 14px; line-height: 1.5; }
-    .hint { opacity: 0.5; font-size: 13px; margin-top: 20px; }
-    kbd {
-      background: #262626; padding: 2px 6px; border-radius: 4px;
-      font-family: ui-monospace, monospace; font-size: 12px;
+    .open-btn {
+      display: inline-block; margin-top: 20px;
+      padding: 12px 24px; background: #22c55e; color: #000;
+      text-decoration: none; border-radius: 8px; font-weight: 600;
+      font-size: 15px;
     }
+    .open-btn:hover { background: #4ade80; }
+    .hint { opacity: 0.5; font-size: 13px; margin-top: 16px; }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Signed in ✓</h1>
-    <p>Studio Amigo is opening in the background.</p>
-    <p>You can close this tab now.</p>
-    <p class="hint"></p>
+    <p>Studio Amigo should open automatically.</p>
+    <a id="open-app" class="open-btn" href="#">Open Studio Amigo</a>
   </div>
   <script>
     (function () {
       var payload = location.hash || location.search
+      var target = 'studio-amigo://auth-callback' + (payload || '')
+      var link = document.getElementById('open-app')
+      if (link) link.href = target
       if (payload) {
-        location.replace('studio-amigo://auth-callback' + payload)
+        location.replace(target)
       }
     })()
   </script>
