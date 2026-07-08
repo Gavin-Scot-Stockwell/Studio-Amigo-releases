@@ -34,28 +34,9 @@
     <h1>Signed in ✓</h1>
     <p>Studio Amigo is opening in the background.</p>
     <div class="countdown" id="countdown">5</div>
-    <p>Closing this tab…</p>
+    <p> You can close this tab now</p>
     <p class="hint">
-      If it doesn't close automatically, press <kbd>Ctrl</kbd>+<kbd>W</kbd> to close it.
     </p>
   </div>
-  <script>
-    (function () {
-      var payload = location.hash || location.search
-      if (payload) {
-        location.replace('studio-amigo://auth-callback' + payload)
-      }
-      var el = document.getElementById('countdown')
-      var n = 5
-      var tick = setInterval(function () {
-        n -= 1
-        if (el) el.textContent = String(Math.max(n, 0))
-        if (n <= 0) {
-          clearInterval(tick)
-          try { window.close() } catch (e) { /* browser blocked */ }
-        }
-      }, 1000)
-    })()
-  </script>
 </body>
 </html>
