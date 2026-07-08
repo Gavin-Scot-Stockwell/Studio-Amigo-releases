@@ -1,1 +1,4 @@
-
+{
+  "payload": "{\"version\":\"1.0.0\",\"issued_at\":\"2026-07-04T00:00:00Z\",\"expires_at\":\"2027-07-04T00:00:00Z\",\"videos\":[]}",
+  "signature": "70b9521f399c6395d1a36404e57c8b819b0d827b9879d49d66492ce537f9f572bf08439903bdd3d6f387a93f1e4eb6abf1ee9203fe08474850bae47f2e6b590c"
+}
