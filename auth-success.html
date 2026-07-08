@@ -1,1 +1,43 @@
-C:\Users\puteana\AppData\Local\Temp\claude\c--Users-puteana-dev-Studio-Amigo\7d378fef-97c3-4099-a5cc-eb2a7db5023c\scratchpad\auth-success.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Studio Amigo — Signed in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #0a0a0a; color: #eee;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; margin: 0; text-align: center;
+    }
+    .card {
+      max-width: 420px; padding: 32px;
+      background: #141414; border: 1px solid #262626; border-radius: 12px;
+    }
+    h1 { font-size: 22px; margin: 0 0 8px; color: #4ade80; }
+    p { margin: 8px 0; opacity: 0.75; font-size: 14px; line-height: 1.5; }
+    .small { opacity: 0.4; font-size: 12px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Signed in ✓</h1>
+    <p>Returning you to Studio Amigo…</p>
+    <p class="small">This tab will close automatically. If it doesn't, you can close it now.</p>
+  </div>
+  <script>
+    (function () {
+      var payload = location.hash || location.search
+      if (payload) {
+        var target = 'studio-amigo://auth-callback' + payload
+        location.replace(target)
+      }
+      setTimeout(function () {
+        try { window.close() } catch (e) { /* browser may block close */ }
+      }, 800)
+    })()
+  </script>
+</body>
+</html>
